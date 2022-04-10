@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, rgb(0,51,77), rgb(24,24,24));
+}
+
+h2 {
+    font-family: "Kaushan Script", sans-serif;
+}
+
+.form-container {
+    display: flex;
+    height: 98vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form-wrap {
+    background: white;
+    width: 40%;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.form-container .form-wrap h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+.form-container .form-wrap .form-box input[type="text"]{
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid #a6a6a6;
+    width: 100%;
+}
+
+.form-container .form-wrap .form-submit input[type="submit"] {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 2px;
+    background: whitesmoke;
+    color: rgb(31, 23, 23);
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.form-submit{
+    text-align: center;
+    padding: 10px;
+}

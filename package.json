@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.18.0"
+  },
+  "name": "say-less",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monique-Holloway/say-less.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monique-Holloway/say-less/issues"
+  },
+  "homepage": "https://github.com/Monique-Holloway/say-less#readme",
+  "description": ""
+}
