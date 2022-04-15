@@ -5,7 +5,9 @@
 }
 
 body {
-    background: linear-gradient(120deg, rgb(0,51,77), rgb(24,24,24));
+    /* background: linear-gradient(120deg, rgb(0,51,77), rgb(24,24,24)); */
+    background: linear-gradient(120deg, white, rgb(199, 166, 124), white);
+    background: linear-gradient(60deg, white, rgb(202, 167, 173), white);
 }
 
 h2 {

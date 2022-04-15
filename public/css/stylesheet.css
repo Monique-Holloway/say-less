@@ -2,13 +2,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: montserrat;
-    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    /* background: linear-gradient(120deg, white, rgb(113, 202, 113), white);
+    background: linear-gradient(60deg, white, rgb(113, 202, 113), white); */
+
+    background: linear-gradient(120deg, white, rgb(199, 166, 124), white);
+    background: linear-gradient(60deg, white, rgb(202, 167, 173), white);
+
+    /* background: linear-gradient(120deg, #ffffff, #9ce0be); */
     height: 100vh;
     overflow: hidden; 
 }
 
 h1 {
     font-family: "Kaushan Script", sans-seriff;
+    font-size: 80px;
 }
 
 .center{
@@ -42,6 +49,7 @@ form .txt_field{
     border: none;
     background: none;
     outline: none;
+    font-family: "Kaushan Script", sans-seriff;
 }
 .txt_field label{
     position: absolute;
@@ -52,6 +60,7 @@ form .txt_field{
     font-size: 16px;
     pointer-events: none;
     transition: .5s;
+    font-family: "Kaushan Script", sans-seriff;
 }
 .txt_field span::before{
     content: ‘’;
@@ -80,7 +89,7 @@ form .txt_field{
 .pass:hover{
     text-decoration: underline;
 }
-button[type=“submit”]{
+/* button[type=“submit”]{
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -95,7 +104,7 @@ button[type=“submit”]{
 button[type=“submit”]:hover{
     border-color: #125688;
     transition: .5s;
-}
+} */
 .signup_link{
     margin: 30px 0;
     text-align: center;
@@ -108,4 +117,38 @@ button[type=“submit”]:hover{
 }
 .signup_link a:hover{
     text-decoration: underline;
+}
+
+#loginButton {
+    border-radius: 15px;
+    background: linear-gradient(120deg, white,rgb(172, 103, 157), white);
+    /* background: linear-gradient(120deg, #ffffff, #9ce0be); */
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+  }
+
+  /* Create New Blog Post CSS */
+#blogHome {
+    background: rgb(112, 60, 60);
+    border: rgb(112, 60, 60);
+    margin: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#submit {
+    background: rgb(151, 118, 74);
+    border: rgb(151, 118, 74);
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 20px; */
+}
+
+/* Sign Up CSS */
+#login {
+    color: black;
+}
+
+.login {
+    padding: 10px;
 }

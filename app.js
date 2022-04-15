@@ -3,15 +3,63 @@ const res = require('express/lib/response');
 const { user } = require('pg/lib/defaults');
 const PORT = process.env.PORT || 3000;
 // "const models" (line 4) is the same as "const db (db for database)"
-const models = require('./models');
 const bcrypt = require('bcrypt');
+const models = require('./models');
+const es6Renderer = require('express-es6-template-engine');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const app = express();
 
+// Template engine configuration
+app.engine('html', es6Renderer);
+app.set('views', 'views');
+app.set('view engine', 'html');
+
 app.use(express.json());
-app.use(express.static('./public'));
+app.use(express.static(__dirname + "/public"));
+
+app.use(cookieParser())
+app.use(session({
+  secret: 'tacocat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge: 60000 * 60
+  }
+}))
+
+app.get('/', (req, res) => {
+  res.render('index');
+})
+
+// Is this login on line 40 the name of the page you're logging 
+// into for the get route or is it whatever name you want it to be?
+app.get('/login', (req, res) => {
+  res.render('login');
+})
+
+app.get('/signup', (req, res) => {
+  res.render('signup');
+})
+
+// Was 'dashboard' on Juan's but mine is blogPage...do names need to match file names?
+app.get('/blogPage', (req, res) => {
+  res.render('blogPage')
+  if (!req.session.user) {
+    res.redirect('/login');
+    return;
+  }
 
 
+
+app.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/login');
+})
+
+// Ask if needed below?
 app.get('/', function (req, res) {
   res.send('Welcome to my blog app')
 })
@@ -65,6 +113,7 @@ app.post('/login', (req, res) => {
 
     bcrypt.compare(password, user.password, (err, match) => {
       if (match) {
+        req.session.user = user;
         res.json({ user_id: user.id, success: true })
       } else {
         res.json({ error: 'incorrect password' })
@@ -74,8 +123,7 @@ app.post('/login', (req, res) => {
 })
 
 
-// Template engine configuration
-app.set('view engine', 'ejs');
+
 
 
 
@@ -102,7 +150,8 @@ app.get('/', (req, res) => {
    
   
   });
+
   app.listen(PORT, () => {
     console.log(`App started in port ${PORT}`)
   })
-// app.listen(3000)
+})

@@ -1,0 +1,78 @@
+/* CSS for Blog Page */
+body {
+    background: linear-gradient(120deg, white, rgb(199, 166, 124), white);
+    background: linear-gradient(60deg, white, rgb(202, 167, 173), white);
+}
+
+.header {
+    font-size: 45pt;
+    /* color: ivory; */
+    /* margin: 20px;
+    font-family: “Kaushan Script”, sans-serif; */
+    width: 100%;
+    height: #e36686;
+    color: black;
+    text-align: center;
+    font-family: "Kaushan Script", sans-seriff;
+    margin: 10px;
+    padding-top: 20px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+#create {
+    background: rgb(112, 60, 60);
+    border: rgb(112, 60, 60);
+    margin: 20px;
+}
+
+#delete {
+    background: rgb(71, 27, 27);
+    border: rgb(71, 27, 27);
+}
+
+#like {
+    background: tan;
+    border: tan;
+}
+
+#dislike {
+    background: tan;
+    border: tan;
+}
+
+#photo {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* @media screen and (max-width: 1200px) {
+    .container {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 100%
+    }
+} */
+
+/* .container {
+    display: flex;
+    flex-direction: row;
+    column-count: 3;
+}
+
+.container .card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    /* flex: 1; */
+    /* flex-wrap: wrap-reverse; */
+    /* margin: 20px;
+    float: none;
+    width: 100%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* max-width: 100%; We may or may not need this. */
+/* } */
