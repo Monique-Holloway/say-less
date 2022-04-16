@@ -1,7 +1,5 @@
 console.log('hello world')
 
-// still trying to figure out how to get this page to render
-
 let form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {
@@ -10,6 +8,7 @@ form.addEventListener('submit', (e) => {
   let username = e.target.username.value;
   let password = e.target.password.value;
 
+//   console.log(username, password) -- This worked when I tried it!!
 
   let body = {
     username: username,
@@ -25,6 +24,6 @@ form.addEventListener('submit', (e) => {
   }).then(res => res.json()).then(data => {
     console.log(data)
 
-    location.href = "/forgotPass";
+    location.href = "/blogPage";
   })
 })

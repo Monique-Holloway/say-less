@@ -30,9 +30,9 @@ app.use(session({
   }
 }))
 
-app.get('/', (req, res) => {
-  res.render('index');
-})
+// app.get('/', (req, res) => {
+//   res.render('login');
+// })
 
 // Is this login on line 40 the name of the page you're logging 
 // into for the get route or is it whatever name you want it to be?
@@ -41,36 +41,56 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-  res.render('signup');
+  res.render('signUp');
+})
+
+// Do I need this to access create blog page? It's still not showing up once I click it.
+app.get('/createNewBlog', (req, res) => {
+  res.render('createNewBlog');
+})
+
+app.get('/forgotPass', (req, res) => {
+  res.render('forgotPass');
 })
 
 // Was 'dashboard' on Juan's but mine is blogPage...do names need to match file names?
 app.get('/blogPage', (req, res) => {
-  res.render('blogPage')
+  // res.render('blogPage')
   if (!req.session.user) {
     res.redirect('/login');
     return;
   }
 
+  let user = req.session.user;
 
-
-app.get('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/login');
+  models.Blog.findAll({
+    where: {
+      user_id: user.id
+    },
+  }).then(blogs => {
+    res.render('blogPage', { locals: { username: user.username, blogs: blogs } });
+  })
 })
 
-// Ask if needed below?
-app.get('/', function (req, res) {
-  res.send('Welcome to my blog app')
+// app.get('/logout', (req, res) => {
+//   req.session.destroy();
+//   res.redirect('login');
+// })
+
+app.get('/blogs', (req, res) => {
+  models.Blog.findAll().then((blogs) => {
+    res.json(blogs);
+  })
 })
 
-/** (lines 22-23)
+app.post('/signUp', (req, res) => {
+/** (lines 82-85)
  * ES6 object deconstruct.
  * const username = req.body.username
  * const email = req.body.email
  * const password = req.body.password
  */
-app.post('/signUp', (req, res) => {
+
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
@@ -122,7 +142,17 @@ app.post('/login', (req, res) => {
   })
 })
 
-
+// tried creating delet route but uncertain about syntax
+app.delete('/blogPage/:id', (req, res) => {
+  const blog_id = number (req.params.id); 
+  models.Blog.findByPk(blog_id).then((blog) => {
+    if (blog.user_id == req.session.user.id) { 
+    blog.destroy()
+  } else {
+    res.json({ error: 'cannot delete blog' })
+  }
+  })
+})
 
 
 
@@ -140,18 +170,19 @@ app.post('/login', (req, res) => {
 
 
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
   // The render method takes the name of the HTML
   // page to be rendered as input.
   // This page should be in the views folder
   // in the root directory.
-  res.render('blogPage');
+  // res.render('blogPage');
   
    
   
-  });
+//   });
 
-  app.listen(PORT, () => {
-    console.log(`App started in port ${PORT}`)
-  })
+
+
+app.listen(PORT, () => {
+  console.log(`App started in port ${PORT}`)
 })

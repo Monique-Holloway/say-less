@@ -18,51 +18,48 @@
     <center><a id="create" class="btn btn-primary" href="createNewBlog.html" role="button">Create Post</a></center>
     <div class="container" id="container">
         <div class="card" style="width: 48rem;">
-            <img src="../public/Images/travelPhoto.png" id="photo" class="card-img-top" alt="...">
+            <img src="/Images/travelPhoto.png" id="photo" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Blog Title Here</h5>
-                <p class="card-text" data-bs-spy="scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi suscipit labore nisi velit ullam in quae, quod, hic ipsa iure quia! Quam saepe ab numquam fugit optio nulla itaque accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
+                <p class="card-text" id="body" data-bs-spy="scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                    suscipit labore nisi velit ullam in quae, quod, hic ipsa iure quia! Quam saepe ab numquam fugit optio
+                    nulla itaque accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores
+                    ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem
+                    tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+                    asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et
+                    exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam
+                    itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam
+                    magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum
+                    sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
                 <a href="#" class="btn btn-primary" id="like">Like</a>
                 <a href="#" class="btn btn-primary" id="dislike">Dislike</a>
-                <center><button type="button" class="btn btn-danger" id="delete">Delete</button></center>
             </div>
         </div>
-        <!-- <div class="card" style="width: 48rem;">
-            <img src="Images/travelPhoto.png" class="card-img-top" alt="...">
+        <div>
+            <h1 class="header">Welcome ${username}!</h1>
+        </div>
+        <div>
+            <h4>Here are your blogs:</h4>
+        </div>
+        <div>
+            ${blogs.map(blog => {
+            return `
+        </div>
+        <div class="card" id="card1" style="width: 48rem;">
+            <img src=${blog.image} id="photo1" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Blog Title Here</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
-                <a href="#" class="btn btn-primary">Like post</a>
-                <a href="#" class="btn btn-primary">Dislike post</a>
+                <h5 class="card-title">${blog.title}</h5>
+                <p class="card-text" id="body1" data-bs-spy="scroll">${blog.body}</p>
+                <a href="#" class="btn btn-primary" id="like1">Like</a>
+                <a href="#" class="btn btn-primary" id="dislike1">Dislike</a>
+                <button type="button" class="btn btn-danger" id="delete1">Delete</button>`
+                }).join('')}
             </div>
         </div>
-        <div class="card" style="width: 48rem;">
-            <img src="Images/travelPhoto.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog Title Here</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
-                <a href="#" class="btn btn-primary">Like post</a>
-                <a href="#" class="btn btn-primary">Dislike post</a>
-            </div>
-        </div>
-        <div class="card" style="width: 48rem;">
-            <img src="Images/travelPhoto.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog Title Here</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
-                <a href="#" class="btn btn-primary">Like post</a>
-                <a href="#" class="btn btn-primary">Dislike post</a>
-            </div>
-        </div>
-        <div class="card" style="width: 48rem;">
-            <img src="Images/travelPhoto.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Blog Title Here</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae asperiores ea ut eligendi labore corporis, rem autem, earum sed aperiam magnam quisquam itaque et exercitationem tempora voluptas nisi iste odio.</p>
-                <a href="#" class="btn btn-primary">Like post</a>
-                <a href="#" class="btn btn-primary">Dislike post</a>
-            </div>
-        </div> -->
+    </div>
     </div>
 </body>
 </html>

@@ -25,10 +25,14 @@ body {
     border: rgb(112, 60, 60);
     margin: 20px;
 }
+/* for initial posts */
+#photo {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
-#delete {
-    background: rgb(71, 27, 27);
-    border: rgb(71, 27, 27);
+#body {
+    font-size: 12px;
 }
 
 #like {
@@ -41,38 +45,46 @@ body {
     border: tan;
 }
 
-#photo {
+#delete {
+    background: rgb(71, 27, 27);
+    border: rgb(71, 27, 27);
+}
+
+
+/* for all posts created by user */
+#card1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#photo1 {
     padding-left: 10px;
     padding-right: 10px;
-}
-/* @media screen and (max-width: 1200px) {
-    .container {
-        width: 35%;
-    }
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 
-@media screen and (max-width: 360px) {
-    .container {
-        width: 100%
-    }
-} */
-
-/* .container {
-    display: flex;
-    flex-direction: row;
-    column-count: 3;
+#body1 {
+    font-size: 12px;
 }
 
-.container .card {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
-    /* flex: 1; */
-    /* flex-wrap: wrap-reverse; */
-    /* margin: 20px;
-    float: none;
-    width: 100%; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* max-width: 100%; We may or may not need this. */
-/* } */
+#like1 {
+    background: tan;
+    border: tan;
+    margin: 5px;
+}
+
+#dislike1 {
+    background: tan;
+    border: tan;
+    margin: 5px;
+}
+
+#delete1 {
+    background: rgb(71, 27, 27);
+    border: rgb(71, 27, 27);
+    margin: 5px;
+}
+
+
+
