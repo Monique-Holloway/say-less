@@ -142,7 +142,7 @@ app.post('/login', (req, res) => {
   })
 })
 
-// tried creating delet route but uncertain about syntax
+// tried creating delete route but uncertain about syntax
 app.delete('/blogPage/:id', (req, res) => {
   const blog_id = number (req.params.id); 
   models.Blog.findByPk(blog_id).then((blog) => {
