@@ -1,4 +1,4 @@
-#Say Less
+# Say Less
 
 This project was a full-stack project that required a healthy dose of time to complete, as I was the sole contributor. The motivation behind this project was to create a responsive website that would allow visitors to create a login, read blog posts, like/dislike posts & delete posts as well.
 
